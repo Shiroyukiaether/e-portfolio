@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Recap - Dark Mode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #2d3250;
+            --bg-card: #424769;
+            --accent: #f9b17a;
+            --secondary: #676f9d;
+            --text: #ffffff;
+        }
+        body { display: flex; background: var(--bg-main); color: var(--text); font-family: 'Raleway', sans-serif; margin: 0; min-height: 100vh; }
+        .sidebar { width: 260px; background: #242840; padding: 20px; position: fixed; height: 100%; border-right: 1px solid var(--secondary); }
+        .nav-link { display: block; padding: 12px; color: #aeb5d1; text-decoration: none; margin-bottom: 8px; border-radius: 8px; transition: 0.3s; font-weight: 600; }
+        .nav-link:hover, .nav-link.active { background: var(--bg-card); color: var(--accent); }
+        .brand { font-size: 24px; font-weight: 700; margin-bottom: 40px; color: var(--accent); }
+
+        .main { margin-left: 300px; padding: 30px; flex: 1; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px; }
+        .card { background: var(--bg-card); padding: 25px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); }
+        
+        .card h3 { margin-bottom: 20px; color: var(--text); border-bottom: 1px solid var(--secondary); padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Progress Bars */
+        .progress-wrapper { margin-bottom: 20px; }
+        .progress-bg { height: 8px; background: #2d3250; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+        .fill { height: 100%; background: var(--accent); border-radius: 4px; }
+        
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 12px; font-size: 14px; border-bottom: 1px solid rgba(103, 111, 157, 0.3); }
+        th { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+        td strong { color: white; }
+        td { color: #cfd2e4; }
+        
+        .stat-box { text-align: center; padding: 15px; background: rgba(45, 50, 80, 0.5); border-radius: 12px; border: 1px solid var(--secondary); }
+        .stat-num { font-size: 32px; font-weight: 700; color: var(--accent); margin-bottom: 5px; }
+        .stat-label { font-size: 13px; color: #aeb5d1; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Status Tags */
+        .tag { padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .tag-success { background: rgba(166, 227, 161, 0.2); color: #a6e3a1; border: 1px solid #a6e3a1; }
+        .tag-progress { background: rgba(249, 177, 122, 0.2); color: var(--accent); border: 1px solid var(--accent); }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="brand">MyPortfolio.</div>
+        <a href="Profile.html" class="nav-link">👤 Profile</a>
+        <a href="Activity.html" class="nav-link">📢 Activity</a>
+        <a href="Recap.html" class="nav-link active">📊 Recap & Stats</a>
+        <a href="AI-Generator.html" class="nav-link">🤖 AI Generator</a>
+    </nav>
+
+    <main class="main">
+        <h1 style="margin-bottom: 25px; font-weight: 700;">Academic Recap</h1>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>📅 Schedule Today</h3>
+                <table>
+                    <tr>
+                        <td style="color: var(--accent);">07:30</td>
+                        <td><strong>Pemrograman Web</strong></td>
+                        <td>Gedung F 2.1</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--accent);">09:45</td>
+                        <td><strong>Sistem Operasi</strong></td>
+                        <td>Lab Kom 3</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>⚠ Deadlines</h3>
+                <div class="progress-wrapper">
+                    <div style="display:flex; justify-content:space-between; font-size:14px;">
+                        <span>Laporan Jarkom</span>
+                        <span style="color: #ff8080;">H-1</span>
+                    </div>
+                    <div class="progress-bg"><div class="fill" style="width: 80%; background: #ff8080;"></div></div>
+                </div>
+                <div class="progress-wrapper">
+                    <div style="display:flex; justify-content:space-between; font-size:14px;">
+                        <span>Proyek Akhir PBO</span>
+                        <span style="color: var(--accent);">H-14</span>
+                    </div>
+                    <div class="progress-bg"><div class="fill" style="width: 40%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>📈 Stats</h3>
+                <div style="display: flex; gap: 15px;">
+                    <div class="stat-box" style="flex:1;">
+                        <div class="stat-num">3.85</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-box" style="flex:1;">
+                        <div class="stat-num">12</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🎓 Transcript (Sem 3)</h3>
+                <table>
+                    <tr><td>Algoritma Struktur Data</td> <td style="text-align: right; color: var(--accent); font-weight: bold;">A</td></tr>
+                    <tr><td>Matematika Komputasi</td> <td style="text-align: right; color: var(--accent); font-weight: bold;">A-</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>💼 Work History</h3>
+            <table>
+                <thead>
+                    <tr><th>Project Name</th><th>Client</th><th>Status</th><th>Income</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Company Profile Web</td>
+                        <td>PT. Maju Jaya</td>
+                        <td><span class="tag tag-success">Done</span></td>
+                        <td style="color:white;">Rp 2.500.000</td>
+                    </tr>
+                    <tr>
+                        <td>UI Design App</td>
+                        <td>Startup Indo</td>
+                        <td><span class="tag tag-progress">Active</span></td>
+                        <td style="color:white;">Rp 1.500.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

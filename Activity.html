@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity - Dark Mode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #2d3250;
+            --bg-card: #424769;
+            --accent: #f9b17a;
+            --secondary: #676f9d;
+            --text: #ffffff;
+        }
+
+        body { display: flex; background: var(--bg-main); color: var(--text); font-family: 'Raleway', sans-serif; margin: 0; min-height: 100vh; }
+        
+        .sidebar { width: 260px; background: #242840; padding: 20px; position: fixed; height: 100%; border-right: 1px solid var(--secondary); }
+        .brand { font-size: 24px; font-weight: 700; margin-bottom: 40px; color: var(--accent); letter-spacing: 1px; }
+        .nav-link { display: block; padding: 12px; color: #aeb5d1; text-decoration: none; margin-bottom: 8px; border-radius: 8px; transition: 0.3s; font-weight: 600; }
+        .nav-link:hover, .nav-link.active { background: var(--bg-card); color: var(--accent); }
+
+        .main { margin-left: 300px; padding: 30px; flex: 1; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+        
+        .card { background: var(--bg-card); padding: 25px; border-radius: 16px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        .feed-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .avatar { width: 45px; height: 45px; background: var(--secondary); border-radius: 50%; border: 2px solid var(--accent); }
+        .time { font-size: 12px; color: #aeb5d1; margin-top: 2px; }
+        
+        /* Badges */
+        .badge-update { background: rgba(249, 177, 122, 0.2); color: var(--accent); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: bold; margin-left: 8px; border: 1px solid var(--accent); }
+        
+        /* Notification List */
+        .notif-item { padding: 15px; border-bottom: 1px solid rgba(103, 111, 157, 0.3); display: flex; gap: 15px; align-items: start; }
+        .notif-unread { background: rgba(249, 177, 122, 0.05); border-left: 3px solid var(--accent); }
+        
+        .btn-read { background: transparent; border: 1px solid var(--secondary); color: var(--text); padding: 8px 20px; border-radius: 20px; cursor: pointer; margin-top: 10px; font-size: 13px; transition: 0.3s; }
+        .btn-read:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="brand">MyPortfolio.</div>
+        <a href="Profile.html" class="nav-link">👤 Profile</a>
+        <a href="Activity.html" class="nav-link active">📢 Activity</a>
+        <a href="Recap.html" class="nav-link">📊 Recap & Stats</a>
+        <a href="AI-Generator.html" class="nav-link">🤖 AI Generator</a>
+    </nav>
+
+    <main class="main">
+        <div class="feed-column">
+            <h2 style="margin-bottom: 25px; color: var(--accent);">Activity Feed</h2>
+            
+            <div class="card">
+                <div class="feed-header">
+                    <div class="avatar"></div>
+                    <div>
+                        <strong>Alex Mahasiswa</strong>
+                        <span class="badge-update">Project Update</span>
+                        <div class="time">2 jam yang lalu</div>
+                    </div>
+                </div>
+                <p style="line-height: 1.6;">Baru saja menyelesaikan fitur Login pada Project Smart Parking! 🚀 Next step: Integrasi API Payment.</p>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); color: #aeb5d1; font-size: 14px;">
+                    💬 3 Comments • ❤ 12 Likes
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="feed-header">
+                    <div class="avatar"></div>
+                    <div>
+                        <strong>Alex Mahasiswa</strong> posted an Article
+                        <div class="time">Kemarin</div>
+                    </div>
+                </div>
+                <h3 style="margin-bottom: 10px;">Tutorial: Deploy Springboot ke Docker</h3>
+                <p style="color: #aeb5d1; margin-bottom: 15px;">Panduan lengkap untuk pemula yang ingin belajar containerization...</p>
+                <button class="btn-read">Read Article</button>
+            </div>
+        </div>
+
+        <div class="notif-column">
+            <h3 style="margin-bottom: 25px; color: var(--text);">Notifications</h3>
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <div class="notif-item notif-unread">
+                    <span style="font-size: 20px;">💬</span>
+                    <div>
+                        <strong style="color: var(--accent);">Dosen Pembimbing</strong> berkomentar.
+                        <div class="time">10 menit lalu</div>
+                    </div>
+                </div>
+                <div class="notif-item">
+                    <span style="font-size: 20px;">🤝</span>
+                    <div>
+                        <strong>Nurudin Santoso</strong> mengundang Anda ke Team.
+                        <div class="time">1 hari lalu</div>
+                    </div>
+                </div>
+                <div class="notif-item" style="border: none;">
+                    <span style="font-size: 20px;">⚠</span>
+                    <div>
+                        <strong>Deadline Alert:</strong> Tugas PBO.
+                        <div class="time">System</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
